@@ -57,9 +57,9 @@ import java.util.Map;
 /**
  * Class that provides access to the Elite: Dangerous Star Map APIs, and a few other functions
  * commonly used by players.
- * <p/>
+ * <p>
  * Make sure to {@link #init(Context)} the API before calling any of the API methods.
- * <p/>
+ * <p>
  * All methods return a {@link Response} object that can be used to cancel the request.
  */
 // TODO: finish creating Tasks for API calls.
@@ -142,7 +142,7 @@ public class EdsmClient {
 
     /**
      * Get rank and progress information for a Commander.
-     * <br/>
+     * <p>
      * Commander <b>must</b> be registered with EDSM
      *
      * @param commanderName The name of the commander as registered on EDSM.
@@ -160,7 +160,7 @@ public class EdsmClient {
 
     /**
      * Update rank in progress information for a Commander
-     * <br/>
+     * <p>
      * Commander <b>must</b> be registered with EDSM
      */
     public void setCommanderRanks(
