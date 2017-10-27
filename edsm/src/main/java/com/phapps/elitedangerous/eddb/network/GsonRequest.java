@@ -12,8 +12,11 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.Map;
+import java.util.zip.GZIPInputStream;
 
 public class GsonRequest<T> extends Request<T> {
 
@@ -56,13 +59,36 @@ public class GsonRequest<T> extends Request<T> {
     protected Response<T> parseNetworkResponse(NetworkResponse response) {
         try {
             Log.d(TAG, "parseNetworkResponse() called with: response = [" + response + "]");
-            String json = new String(response.data);
+            String json;
+            if (response.headers.containsKey("Content-Encoding") &&
+                    response.headers.get("Content-Encoding").equals("gzip")) {
+                json = decompressGzipData(response.data);
+            } else {
+                json = new String(response.data);
+            }
             Log.d(TAG, json);
             T parseObject = mGson.fromJson(json, mType);
             return Response.success(parseObject, HttpHeaderParser.parseCacheHeaders(response));
         } catch (JsonSyntaxException e) {
             return Response.error(new ParseError(e));
+        } catch (IOException e) {
+            return Response.error(new ParseError(e));
         }
+    }
+
+    private String decompressGzipData(byte[] gzipData) throws IOException {
+        final int BUFFER_SIZE = 32;
+        ByteArrayInputStream is = new ByteArrayInputStream(gzipData);
+        GZIPInputStream gis = new GZIPInputStream(is, BUFFER_SIZE);
+        StringBuilder string = new StringBuilder();
+        byte[] data = new byte[BUFFER_SIZE];
+        int bytesRead;
+        while ((bytesRead = gis.read(data)) != -1) {
+            string.append(new String(data, 0, bytesRead));
+        }
+        gis.close();
+        is.close();
+        return string.toString();
     }
 
     private void initGson() {
