@@ -23,3 +23,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keepattributes Annotations, InnerClasses, Signature
+
+# GSON Serialized objects
+
+-keepclassmembers class com.phapps.elitedangerous.eddb.dto.** { *; }
