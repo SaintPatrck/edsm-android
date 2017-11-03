@@ -28,4 +28,4 @@
 
 # GSON Serialized objects
 
--keepclassmembers class com.phapps.elitedangerous.eddb.dto.** { *; }
+-keepclassmembers class com.phapps.elitedangerous.edsm.dto.** { *; }

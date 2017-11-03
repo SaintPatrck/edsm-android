@@ -4,13 +4,22 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import android.util.Log;
 
+import com.phapps.elitedangerous.edsm.callbacks.GetCelestialBodiesInSystemCallbacks;
+import com.phapps.elitedangerous.edsm.callbacks.GetFactionsInSystemCallbacks;
+import com.phapps.elitedangerous.edsm.callbacks.GetStationsInSystemCallbacks;
 import com.phapps.elitedangerous.edsm.callbacks.GetSystemInfoCallbacks;
 import com.phapps.elitedangerous.edsm.callbacks.GetSystemsInAreaCallbacks;
 import com.phapps.elitedangerous.edsm.callbacks.PlanRouteCallbacks;
 import com.phapps.elitedangerous.edsm.dto.CoordinatesDto;
+import com.phapps.elitedangerous.edsm.dto.SystemBodiesDto;
 import com.phapps.elitedangerous.edsm.dto.SystemDistanceDto;
 import com.phapps.elitedangerous.edsm.dto.SystemDto;
+import com.phapps.elitedangerous.edsm.dto.SystemFactionsDto;
 import com.phapps.elitedangerous.edsm.dto.SystemJumpDto;
+import com.phapps.elitedangerous.edsm.dto.SystemStationsDto;
+import com.phapps.elitedangerous.edsm.requests.GetCelestialBodiesInSystemRequest;
+import com.phapps.elitedangerous.edsm.requests.GetFactionsInSystemRequest;
+import com.phapps.elitedangerous.edsm.requests.GetStationsInSystemRequest;
 import com.phapps.elitedangerous.edsm.requests.GetSystemInfoRequest;
 import com.phapps.elitedangerous.edsm.requests.GetSystemsInAreaRequest;
 import com.phapps.elitedangerous.edsm.requests.PlanRouteRequest;
@@ -163,6 +172,88 @@ public class SystemInstrumentedTest {
             public void onSuccess(SystemJumpDto[] systems) {
                 assertNotNull(systems);
                 assertTrue(systems.length > 0);
+            }
+
+            @Override
+            public void onFail(String error) {
+                fail(error);
+            }
+
+            @Override
+            public void onError() {
+                fail();
+            }
+        });
+
+        signal.await(10L, TimeUnit.SECONDS);
+    }
+
+    @Test
+    public void testGetCelestialBodies() throws Exception {
+        final CountDownLatch signal = new CountDownLatch(1);
+
+        GetCelestialBodiesInSystemRequest request = new GetCelestialBodiesInSystemRequest();
+        request.setSystemName("Sol");
+
+        EdsmClient.getInstance().getCelestialBodiesInSystem(request, new GetCelestialBodiesInSystemCallbacks() {
+            @Override
+            public void onSuccess(SystemBodiesDto systemBodies) {
+                assertNotNull(systemBodies);
+            }
+
+            @Override
+            public void onFail(String error) {
+                fail(error);
+            }
+
+            @Override
+            public void onError() {
+                fail();
+            }
+        });
+
+        signal.await(10L, TimeUnit.SECONDS);
+    }
+
+    @Test
+    public void testGetStations() throws Exception {
+        final CountDownLatch signal = new CountDownLatch(1);
+
+        GetStationsInSystemRequest request = new GetStationsInSystemRequest();
+        request.setSystemName("Sol");
+
+        EdsmClient.getInstance().getStationsInSystem(request, new GetStationsInSystemCallbacks() {
+            @Override
+            public void onSuccess(SystemStationsDto stations) {
+                assertNotNull(stations);
+            }
+
+            @Override
+            public void onFail(String error) {
+                fail(error);
+            }
+
+            @Override
+            public void onError() {
+                fail();
+            }
+        });
+
+        signal.await(10L, TimeUnit.SECONDS);
+    }
+
+    @Test
+    public void testGetFactions() throws Exception {
+        final CountDownLatch signal = new CountDownLatch(1);
+
+        GetFactionsInSystemRequest request = new GetFactionsInSystemRequest();
+        request.setSystemName("Achali");
+        request.setShowHistory(true);
+
+        EdsmClient.getInstance().getFactionsInSystem(request, new GetFactionsInSystemCallbacks() {
+            @Override
+            public void onSuccess(SystemFactionsDto factions) {
+                assertNotNull(factions);
             }
 
             @Override

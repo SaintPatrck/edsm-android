@@ -10,10 +10,13 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
+import com.phapps.elitedangerous.edsm.callbacks.GetCelestialBodiesInSystemCallbacks;
 import com.phapps.elitedangerous.edsm.callbacks.GetCommanderCreditsCallbacks;
 import com.phapps.elitedangerous.edsm.callbacks.GetCommanderInventoryCallbacks;
 import com.phapps.elitedangerous.edsm.callbacks.GetCommanderRanksCallbacks;
+import com.phapps.elitedangerous.edsm.callbacks.GetFactionsInSystemCallbacks;
 import com.phapps.elitedangerous.edsm.callbacks.GetServerStatusCallbacks;
+import com.phapps.elitedangerous.edsm.callbacks.GetStationsInSystemCallbacks;
 import com.phapps.elitedangerous.edsm.callbacks.GetSystemInfoCallbacks;
 import com.phapps.elitedangerous.edsm.callbacks.GetSystemsInAreaCallbacks;
 import com.phapps.elitedangerous.edsm.callbacks.PlanRouteCallbacks;
@@ -26,8 +29,11 @@ import com.phapps.elitedangerous.edsm.callbacks.UpdateCommanderShipCallbacks;
 import com.phapps.elitedangerous.edsm.dto.ServerStatusDto;
 import com.phapps.elitedangerous.edsm.network.GsonRequest;
 import com.phapps.elitedangerous.edsm.requests.BaseSystemRequest;
+import com.phapps.elitedangerous.edsm.requests.GetCelestialBodiesInSystemRequest;
 import com.phapps.elitedangerous.edsm.requests.GetCommanderCreditsRequest;
 import com.phapps.elitedangerous.edsm.requests.GetCommanderInventoryRequest;
+import com.phapps.elitedangerous.edsm.requests.GetFactionsInSystemRequest;
+import com.phapps.elitedangerous.edsm.requests.GetStationsInSystemRequest;
 import com.phapps.elitedangerous.edsm.requests.GetSystemInfoRequest;
 import com.phapps.elitedangerous.edsm.requests.GetSystemsInAreaRequest;
 import com.phapps.elitedangerous.edsm.requests.PlanRouteRequest;
@@ -37,9 +43,12 @@ import com.phapps.elitedangerous.edsm.requests.SetCommanderCurrentShipRequest;
 import com.phapps.elitedangerous.edsm.requests.SetCommanderInventoryRequest;
 import com.phapps.elitedangerous.edsm.requests.SetCommanderRanksRequest;
 import com.phapps.elitedangerous.edsm.requests.UpdateCommanderShipRequest;
+import com.phapps.elitedangerous.edsm.tasks.GetCelestialBodiesInSystemTask;
 import com.phapps.elitedangerous.edsm.tasks.GetCommanderCreditsTask;
 import com.phapps.elitedangerous.edsm.tasks.GetCommanderInventoryTask;
 import com.phapps.elitedangerous.edsm.tasks.GetCommanderRanksTask;
+import com.phapps.elitedangerous.edsm.tasks.GetFactionsInSystemTask;
+import com.phapps.elitedangerous.edsm.tasks.GetStationsInSystemTask;
 import com.phapps.elitedangerous.edsm.tasks.GetSystemInfoTask;
 import com.phapps.elitedangerous.edsm.tasks.GetSystemsInAreaTask;
 import com.phapps.elitedangerous.edsm.tasks.PlanRouteTask;
@@ -252,6 +261,30 @@ public class EdsmClient {
         verifyInitCalled();
 
         new GetSystemsInAreaTask(mRequestQueue, mServer, request, callbacks).execute();
+    }
+
+    public void getCelestialBodiesInSystem(
+            @NonNull GetCelestialBodiesInSystemRequest request,
+            @NonNull GetCelestialBodiesInSystemCallbacks callbacks) {
+        verifyInitCalled();
+
+        new GetCelestialBodiesInSystemTask(mRequestQueue, mServer, request, callbacks).execute();
+    }
+
+    public void getStationsInSystem(
+            @NonNull GetStationsInSystemRequest request,
+            @NonNull GetStationsInSystemCallbacks callbacks) {
+        verifyInitCalled();
+
+        new GetStationsInSystemTask(mRequestQueue, mServer, request, callbacks).execute();
+    }
+
+    public void getFactionsInSystem(
+            @NonNull GetFactionsInSystemRequest request,
+            @NonNull GetFactionsInSystemCallbacks callbacks) {
+        verifyInitCalled();
+
+        new GetFactionsInSystemTask(mRequestQueue, mServer, request, callbacks).execute();
     }
     //endregion
 

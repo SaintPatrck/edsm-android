@@ -11,7 +11,7 @@ public class StationDto {
     @SerializedName("type")
     private String mType;
     @SerializedName("distanceToArrival")
-    private Integer mDistanceToArrival;
+    private Double mDistanceToArrival;
     @SerializedName("allegiance")
     private String mAllegiance;
     @SerializedName("government")
@@ -49,11 +49,11 @@ public class StationDto {
         mType = type;
     }
 
-    public Integer getDistanceToArrival() {
+    public Double getDistanceToArrival() {
         return mDistanceToArrival;
     }
 
-    public void setDistanceToArrival(Integer distanceToArrival) {
+    public void setDistanceToArrival(Double distanceToArrival) {
         mDistanceToArrival = distanceToArrival;
     }
 

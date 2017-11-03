@@ -1,6 +1,7 @@
 package com.phapps.elitedangerous.edsm.dto;
 
 import com.google.gson.annotations.SerializedName;
+import com.phapps.elitedangerous.edsm.annotations.CelestialBodyType;
 
 import java.util.List;
 
@@ -10,11 +11,12 @@ public class BodyDto {
     @SerializedName("name")
     private String mName;
     @SerializedName("type")
+    @CelestialBodyType
     private String mType;
     @SerializedName("subType")
     private String mSubType;
     @SerializedName("distanceToArrival")
-    private Long mDistanceToArrival;
+    private Double mDistanceToArrival;
     @SerializedName("isMainStar")
     private Boolean mMainStar;
     @SerializedName("isScoopable")
@@ -76,11 +78,12 @@ public class BodyDto {
         mName = name;
     }
 
+    @CelestialBodyType
     public String getType() {
         return mType;
     }
 
-    public void setType(String type) {
+    public void setType(@CelestialBodyType String type) {
         mType = type;
     }
 
@@ -92,11 +95,11 @@ public class BodyDto {
         mSubType = subType;
     }
 
-    public Long getDistanceToArrival() {
+    public Double getDistanceToArrival() {
         return mDistanceToArrival;
     }
 
-    public void setDistanceToArrival(Long distanceToArrival) {
+    public void setDistanceToArrival(Double distanceToArrival) {
         mDistanceToArrival = distanceToArrival;
     }
 

@@ -2,7 +2,7 @@ package com.phapps.elitedangerous.edsm.dto;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Date;
+import java.util.Arrays;
 import java.util.Map;
 
 public class FactionDto {
@@ -11,18 +11,22 @@ public class FactionDto {
     private Long mId;
     @SerializedName("name")
     private String mName;
+    @SerializedName("allegiance")
+    private String mAllegiance;
+    @SerializedName("government")
+    private String mGovernment;
     @SerializedName("influence")
     private Double mInfluence;
     @SerializedName("influenceHistory")
-    private Map<Date, Double> mInfluenceHistory;
+    private Map<String, Double> mInfluenceHistory;
     @SerializedName("state")
     private String mState;
     @SerializedName("stateHistory")
-    private Map<Date, String> mStateHistory;
+    private Map<String, String> mStateHistory;
     @SerializedName("recoveringStates")
-    private Map<Date, String> mRecoveringStates;
+    private FactionStateDto[] mRecoveringStates;
     @SerializedName("pendingStates")
-    private Map<String, Integer> mPendingStates;
+    private FactionStateDto[] mPendingStates;
     @SerializedName("isPlayer")
     private Boolean mIsPlayer;
 
@@ -42,6 +46,22 @@ public class FactionDto {
         mName = name;
     }
 
+    public String getAllegiance() {
+        return mAllegiance;
+    }
+
+    public void setAllegiance(String allegiance) {
+        mAllegiance = allegiance;
+    }
+
+    public String getGovernment() {
+        return mGovernment;
+    }
+
+    public void setGovernment(String government) {
+        mGovernment = government;
+    }
+
     public Double getInfluence() {
         return mInfluence;
     }
@@ -50,11 +70,11 @@ public class FactionDto {
         mInfluence = influence;
     }
 
-    public Map<Date, Double> getInfluenceHistory() {
+    public Map<String, Double> getInfluenceHistory() {
         return mInfluenceHistory;
     }
 
-    public void setInfluenceHistory(Map<Date, Double> influenceHistory) {
+    public void setInfluenceHistory(Map<String, Double> influenceHistory) {
         mInfluenceHistory = influenceHistory;
     }
 
@@ -66,27 +86,27 @@ public class FactionDto {
         mState = state;
     }
 
-    public Map<Date, String> getStateHistory() {
+    public Map<String, String> getStateHistory() {
         return mStateHistory;
     }
 
-    public void setStateHistory(Map<Date, String> stateHistory) {
+    public void setStateHistory(Map<String, String> stateHistory) {
         mStateHistory = stateHistory;
     }
 
-    public Map<Date, String> getRecoveringStates() {
+    public FactionStateDto[] getRecoveringStates() {
         return mRecoveringStates;
     }
 
-    public void setRecoveringStates(Map<Date, String> recoveringStates) {
+    public void setRecoveringStates(FactionStateDto[] recoveringStates) {
         mRecoveringStates = recoveringStates;
     }
 
-    public Map<String, Integer> getPendingStates() {
+    public FactionStateDto[] getPendingStates() {
         return mPendingStates;
     }
 
-    public void setPendingStates(Map<String, Integer> pendingStates) {
+    public void setPendingStates(FactionStateDto[] pendingStates) {
         mPendingStates = pendingStates;
     }
 
@@ -107,8 +127,8 @@ public class FactionDto {
                 ",\n mInfluenceHistory=" + mInfluenceHistory + '\'' +
                 ",\n mState='" + mState + '\'' +
                 ",\n mStateHistory=" + mStateHistory + '\'' +
-                ",\n mRecoveringStates=" + mRecoveringStates + '\'' +
-                ",\n mPendingStates=" + mPendingStates + '\'' +
+                ",\n mRecoveringStates=" + Arrays.toString(mRecoveringStates) + '\'' +
+                ",\n mPendingStates=" + Arrays.toString(mPendingStates) + '\'' +
                 ",\n mIsPlayer=" + mIsPlayer + '\'' +
                 '}';
     }
