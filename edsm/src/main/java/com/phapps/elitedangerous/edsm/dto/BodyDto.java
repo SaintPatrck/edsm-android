@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2017.
+ *
+ * Copyright 2017 Patrick Honkonen
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+
 package com.phapps.elitedangerous.edsm.dto;
 
 import com.google.gson.annotations.SerializedName;
@@ -66,16 +84,8 @@ public class BodyDto {
         return mId;
     }
 
-    public void setId(Long id) {
-        mId = id;
-    }
-
     public String getName() {
         return mName;
-    }
-
-    public void setName(String name) {
-        mName = name;
     }
 
     @CelestialBodyType
@@ -83,200 +93,100 @@ public class BodyDto {
         return mType;
     }
 
-    public void setType(@CelestialBodyType String type) {
-        mType = type;
-    }
-
     public String getSubType() {
         return mSubType;
-    }
-
-    public void setSubType(String subType) {
-        mSubType = subType;
     }
 
     public Double getDistanceToArrival() {
         return mDistanceToArrival;
     }
 
-    public void setDistanceToArrival(Double distanceToArrival) {
-        mDistanceToArrival = distanceToArrival;
-    }
-
     public Boolean getMainStar() {
         return mMainStar;
-    }
-
-    public void setMainStar(Boolean mainStar) {
-        mMainStar = mainStar;
     }
 
     public Boolean getScoopable() {
         return mScoopable;
     }
 
-    public void setScoopable(Boolean scoopable) {
-        mScoopable = scoopable;
-    }
-
     public Integer getAge() {
         return mAge;
-    }
-
-    public void setAge(Integer age) {
-        mAge = age;
     }
 
     public Double getAbsoluteMagnitude() {
         return mAbsoluteMagnitude;
     }
 
-    public void setAbsoluteMagnitude(Double absoluteMagnitude) {
-        mAbsoluteMagnitude = absoluteMagnitude;
-    }
-
     public Double getSolarMasses() {
         return mSolarMasses;
-    }
-
-    public void setSolarMasses(Double solarMasses) {
-        mSolarMasses = solarMasses;
     }
 
     public Double getSolarRadius() {
         return mSolarRadius;
     }
 
-    public void setSolarRadius(Double solarRadius) {
-        mSolarRadius = solarRadius;
-    }
-
     public Integer getSurfaceTemperature() {
         return mSurfaceTemperature;
-    }
-
-    public void setSurfaceTemperature(Integer surfaceTemperature) {
-        mSurfaceTemperature = surfaceTemperature;
     }
 
     public Double getOrbitalPeriod() {
         return mOrbitalPeriod;
     }
 
-    public void setOrbitalPeriod(Double orbitalPeriod) {
-        mOrbitalPeriod = orbitalPeriod;
-    }
-
     public Double getSemiMajorAxis() {
         return mSemiMajorAxis;
-    }
-
-    public void setSemiMajorAxis(Double semiMajorAxis) {
-        mSemiMajorAxis = semiMajorAxis;
     }
 
     public Double getOrbitalEccentricity() {
         return mOrbitalEccentricity;
     }
 
-    public void setOrbitalEccentricity(Double orbitalEccentricity) {
-        mOrbitalEccentricity = orbitalEccentricity;
-    }
-
     public Double getOrbitalInclination() {
         return mOrbitalInclination;
-    }
-
-    public void setOrbitalInclination(Double orbitalInclination) {
-        mOrbitalInclination = orbitalInclination;
     }
 
     public Double getArgOfPeriapsis() {
         return mArgOfPeriapsis;
     }
 
-    public void setArgOfPeriapsis(Double argOfPeriapsis) {
-        mArgOfPeriapsis = argOfPeriapsis;
-    }
-
     public Double getRotationalPeriod() {
         return mRotationalPeriod;
-    }
-
-    public void setRotationalPeriod(Double rotationalPeriod) {
-        mRotationalPeriod = rotationalPeriod;
     }
 
     public Boolean getRotationalPeriodTidallyLocked() {
         return mRotationalPeriodTidallyLocked;
     }
 
-    public void setRotationalPeriodTidallyLocked(Boolean rotationalPeriodTidallyLocked) {
-        mRotationalPeriodTidallyLocked = rotationalPeriodTidallyLocked;
-    }
-
     public Boolean getLandable() {
         return mLandable;
-    }
-
-    public void setLandable(Boolean landable) {
-        mLandable = landable;
     }
 
     public Double getGravity() {
         return mGravity;
     }
 
-    public void setGravity(Double gravity) {
-        mGravity = gravity;
-    }
-
     public Double getEarthMasses() {
         return mEarthMasses;
-    }
-
-    public void setEarthMasses(Double earthMasses) {
-        mEarthMasses = earthMasses;
     }
 
     public Double getRadius() {
         return mRadius;
     }
 
-    public void setRadius(Double radius) {
-        mRadius = radius;
-    }
-
     public String getVolcanismType() {
         return mVolcanismType;
-    }
-
-    public void setVolcanismType(String volcanismType) {
-        mVolcanismType = volcanismType;
     }
 
     public String getAtmosphereType() {
         return mAtmosphereType;
     }
 
-    public void setAtmosphereType(String atmosphereType) {
-        mAtmosphereType = atmosphereType;
-    }
-
     public String getTerraformingState() {
         return mTerraformingState;
     }
 
-    public void setTerraformingState(String terraformingState) {
-        mTerraformingState = terraformingState;
-    }
-
     public List<RingDto> getRings() {
         return mRings;
-    }
-
-    public void setRings(List<RingDto> rings) {
-        mRings = rings;
     }
 
     @Override

@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2017.
+ *
+ * Copyright 2017 Patrick Honkonen
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+
 package com.phapps.elitedangerous.edsm.dto;
 
 import com.google.gson.annotations.SerializedName;
@@ -34,88 +52,44 @@ public class FactionDto {
         return mId;
     }
 
-    public void setId(Long id) {
-        mId = id;
-    }
-
     public String getName() {
         return mName;
-    }
-
-    public void setName(String name) {
-        mName = name;
     }
 
     public String getAllegiance() {
         return mAllegiance;
     }
 
-    public void setAllegiance(String allegiance) {
-        mAllegiance = allegiance;
-    }
-
     public String getGovernment() {
         return mGovernment;
-    }
-
-    public void setGovernment(String government) {
-        mGovernment = government;
     }
 
     public Double getInfluence() {
         return mInfluence;
     }
 
-    public void setInfluence(Double influence) {
-        mInfluence = influence;
-    }
-
     public Map<String, Double> getInfluenceHistory() {
         return mInfluenceHistory;
-    }
-
-    public void setInfluenceHistory(Map<String, Double> influenceHistory) {
-        mInfluenceHistory = influenceHistory;
     }
 
     public String getState() {
         return mState;
     }
 
-    public void setState(String state) {
-        mState = state;
-    }
-
     public Map<String, String> getStateHistory() {
         return mStateHistory;
-    }
-
-    public void setStateHistory(Map<String, String> stateHistory) {
-        mStateHistory = stateHistory;
     }
 
     public FactionStateDto[] getRecoveringStates() {
         return mRecoveringStates;
     }
 
-    public void setRecoveringStates(FactionStateDto[] recoveringStates) {
-        mRecoveringStates = recoveringStates;
-    }
-
     public FactionStateDto[] getPendingStates() {
         return mPendingStates;
     }
 
-    public void setPendingStates(FactionStateDto[] pendingStates) {
-        mPendingStates = pendingStates;
-    }
-
     public Boolean getPlayer() {
         return mIsPlayer;
-    }
-
-    public void setPlayer(Boolean player) {
-        mIsPlayer = player;
     }
 
     @Override

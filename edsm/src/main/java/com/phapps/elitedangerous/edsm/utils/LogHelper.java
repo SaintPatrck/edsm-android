@@ -16,31 +16,32 @@
  *    limitations under the License.
  */
 
-package com.phapps.elitedangerous.edsm.dto;
+package com.phapps.elitedangerous.edsm.utils;
 
-import com.google.gson.annotations.SerializedName;
+import android.util.Log;
 
-import java.util.Arrays;
+public final class LogHelper {
+    private static boolean sEnabled = false;
 
-public class SystemJumpDto {
-    @SerializedName("name")
-    private String mName;
-    @SerializedName("coordinates")
-    private double[] mCoordinates;
-
-    public String getName() {
-        return mName;
+    public static void setEnabled(boolean enabled) {
+        sEnabled = enabled;
     }
 
-    public double[] getCoordinates() {
-        return mCoordinates;
+    public static void d(String tag, String message) {
+        if (sEnabled) {
+            Log.d(tag, message);
+        }
     }
 
-    @Override
-    public String toString() {
-        return "SystemJumpDto{" +
-                "\nmName='" + mName + '\'' +
-                ",\n mCoordinates=" + Arrays.toString(mCoordinates) +
-                '}';
+    public static void w(String tag, String message, Throwable e) {
+        if (sEnabled) {
+            Log.w(tag, message, e);
+        }
+    }
+
+    public static void e(String tag, String message, Throwable e) {
+        if (sEnabled) {
+            Log.e(tag, message, e);
+        }
     }
 }

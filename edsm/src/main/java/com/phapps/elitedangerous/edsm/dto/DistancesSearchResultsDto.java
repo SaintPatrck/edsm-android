@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2017.
+ *
+ * Copyright 2017 Patrick Honkonen
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+
 package com.phapps.elitedangerous.edsm.dto;
 
 import com.google.gson.annotations.SerializedName;
@@ -20,40 +38,20 @@ public class DistancesSearchResultsDto {
         return mId;
     }
 
-    public void setId(Long id) {
-        mId = id;
-    }
-
     public SystemDto getSystem1() {
         return mSystem1;
-    }
-
-    public void setSystem1(SystemDto system1) {
-        mSystem1 = system1;
     }
 
     public SystemDto getSystem2() {
         return mSystem2;
     }
 
-    public void setSystem2(SystemDto system2) {
-        mSystem2 = system2;
-    }
-
     public Double getDistance() {
         return mDistance;
     }
 
-    public void setDistance(Double distance) {
-        mDistance = distance;
-    }
-
     public Date getHiddenAt() {
         return mHiddenAt;
-    }
-
-    public void setHiddenAt(Date hiddenAt) {
-        mHiddenAt = hiddenAt;
     }
 
     @Override

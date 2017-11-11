@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2017.
+ *
+ * Copyright 2017 Patrick Honkonen
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+
 package com.phapps.elitedangerous.edsm.dto;
 
 import com.google.gson.annotations.SerializedName;
@@ -30,81 +48,51 @@ public class SystemDto {
         return mId;
     }
 
-    public void setId(Long id) {
-        mId = id;
-    }
 
     public String getName() {
         return mName;
     }
 
-    public void setName(String name) {
-        mName = name;
-    }
 
     public CoordinatesDto getCoordinates() {
         return mCoordinates;
     }
 
-    public void setCoordinates(CoordinatesDto coordinates) {
-        mCoordinates = coordinates;
-    }
 
     public Long getDuplicates() {
         return mDuplicates;
     }
 
-    public void setDuplicates(Long duplicates) {
-        mDuplicates = duplicates;
-    }
 
     public Boolean getRequirePermit() {
         return mRequirePermit;
     }
 
-    public void setRequirePermit(Boolean requirePermit) {
-        mRequirePermit = requirePermit;
-    }
 
     public String getPermitName() {
         return mPermitName;
     }
 
-    public void setPermitName(String permitName) {
-        mPermitName = permitName;
-    }
 
     public InformationDto getInformation() {
         return mInformation;
     }
 
-    public void setInformation(InformationDto information) {
-        mInformation = information;
-    }
 
     public StarDto getStar() {
         return mStar;
     }
 
-    public void setStar(StarDto star) {
-        mStar = star;
-    }
 
     public Date getHiddenAt() {
         return mHiddenAt;
     }
 
-    public void setHiddenAt(Date hiddenAt) {
-        mHiddenAt = hiddenAt;
-    }
 
     public Long getMergedTo() {
         return mMergedTo;
     }
 
-    public void setMergedTo(Long mergedTo) {
-        mMergedTo = mergedTo;
-    }
 
     @Override
     public String toString() {

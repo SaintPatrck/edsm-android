@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2017.
+ *
+ * Copyright 2017 Patrick Honkonen
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+
 package com.phapps.elitedangerous.edsm.dto;
 
 import com.google.gson.annotations.SerializedName;
@@ -26,72 +44,36 @@ public class InformationDto {
         return mDatabaseId;
     }
 
-    public void setDatabaseId(Long databaseId) {
-        mDatabaseId = databaseId;
-    }
-
     public String getAllegiance() {
         return mAllegiance;
-    }
-
-    public void setAllegiance(String allegiance) {
-        mAllegiance = allegiance;
     }
 
     public String getGovernment() {
         return mGovernment;
     }
 
-    public void setGovernment(String government) {
-        mGovernment = government;
-    }
-
     public String getFaction() {
         return mFaction;
-    }
-
-    public void setFaction(String faction) {
-        mFaction = faction;
     }
 
     public String getState() {
         return mState;
     }
 
-    public void setState(String state) {
-        mState = state;
-    }
-
     public Long getPopulation() {
         return mPopulation;
-    }
-
-    public void setPopulation(Long population) {
-        mPopulation = population;
     }
 
     public String getSecurity() {
         return mSecurity;
     }
 
-    public void setSecurity(String security) {
-        mSecurity = security;
-    }
-
     public String getEconomy() {
         return mEconomy;
     }
 
-    public void setEconomy(String economy) {
-        mEconomy = economy;
-    }
-
     public String getReserve() {
         return mReserve;
-    }
-
-    public void setReserve(String reserve) {
-        mReserve = reserve;
     }
 
     @Override
