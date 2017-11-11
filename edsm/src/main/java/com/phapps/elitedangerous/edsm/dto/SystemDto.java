@@ -18,9 +18,12 @@
 
 package com.phapps.elitedangerous.edsm.dto;
 
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.phapps.elitedangerous.edsm.network.AlwaysListTypeAdapterFactory;
 
 import java.util.Date;
+import java.util.List;
 
 public class SystemDto {
     @SerializedName("id")
@@ -35,8 +38,9 @@ public class SystemDto {
     private Boolean mRequirePermit;
     @SerializedName("permitName")
     private String mPermitName;
+    @JsonAdapter(AlwaysListTypeAdapterFactory.class)
     @SerializedName("information")
-    private InformationDto mInformation;
+    private List<InformationDto> mInformation;
     @SerializedName("primaryStar")
     private StarDto mStar;
     @SerializedName("hidden_at")
@@ -48,51 +52,41 @@ public class SystemDto {
         return mId;
     }
 
-
     public String getName() {
         return mName;
     }
-
 
     public CoordinatesDto getCoordinates() {
         return mCoordinates;
     }
 
-
     public Long getDuplicates() {
         return mDuplicates;
     }
-
 
     public Boolean getRequirePermit() {
         return mRequirePermit;
     }
 
-
     public String getPermitName() {
         return mPermitName;
     }
 
-
-    public InformationDto getInformation() {
+    public List<InformationDto> getInformation() {
         return mInformation;
     }
-
 
     public StarDto getStar() {
         return mStar;
     }
 
-
     public Date getHiddenAt() {
         return mHiddenAt;
     }
 
-
     public Long getMergedTo() {
         return mMergedTo;
     }
-
 
     @Override
     public String toString() {

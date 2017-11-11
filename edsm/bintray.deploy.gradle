@@ -19,6 +19,7 @@
 /**
  * Contains tasks used to generate and upload the Bintray maven package.
  */
+
 apply plugin: 'com.jfrog.bintray'
 
 version = libraryVersion

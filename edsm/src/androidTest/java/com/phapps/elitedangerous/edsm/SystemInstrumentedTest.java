@@ -67,13 +67,14 @@ public class SystemInstrumentedTest {
         EdsmClient.init(InstrumentationRegistry.getTargetContext());
         // The test endpoint does not always return reliable results so we use the production endpoint.
         EdsmClient.getInstance().setServer(EdsmClient.Server.Production);
+        EdsmClient.getInstance().setLoggingEnabled(true);
     }
 
     @Test
     public void testGetSystemDetails_SingleSystem() throws Exception {
         final CountDownLatch signal = new CountDownLatch(1);
         List<String> systemNames = new ArrayList<>();
-        systemNames.add("Sol");
+        systemNames.add("Ma");
 
         GetSystemInfoRequest request = new GetSystemInfoRequest()
                 .setSystemNames(systemNames);

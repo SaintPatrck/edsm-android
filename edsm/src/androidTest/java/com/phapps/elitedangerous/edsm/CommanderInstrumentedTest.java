@@ -68,6 +68,7 @@ public class CommanderInstrumentedTest {
         EdsmClient.init(InstrumentationRegistry.getTargetContext());
         // The test endpoint does not return the expected results so we use the production endpoint instead.
         EdsmClient.getInstance().setServer(EdsmClient.Server.Production);
+        EdsmClient.getInstance().setLoggingEnabled(true);
     }
 
     @Test

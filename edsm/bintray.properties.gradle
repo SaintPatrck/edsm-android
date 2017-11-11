@@ -19,6 +19,9 @@
 /**
  * Contains library properties used when publishing to Bintray and jcenter
  */
+
+apply from: 'version.gradle'
+
 ext {
     bintrayRepo = 'edsm-android'
     bintrayName = 'edsm-android-client'
@@ -31,7 +34,7 @@ ext {
 
     libraryName = 'EDSM-Android'
     libraryDescription = 'An Elite: Dangerous Star Map API client for Android.'
-    libraryVersion = '1.0.3'
+    libraryVersion = VERSION_NAME
 
     developerId = 'stpatrck'
     developerName = 'Patrick Honkonen'

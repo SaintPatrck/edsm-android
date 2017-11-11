@@ -18,6 +18,7 @@
 
 apply plugin: 'com.android.library'
 apply from: 'bintray.properties.gradle'
+apply from: 'version.gradle'
 
 android {
     compileSdkVersion 26
@@ -27,8 +28,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 26
-        versionCode 3
-        versionName "1.0.3"
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
