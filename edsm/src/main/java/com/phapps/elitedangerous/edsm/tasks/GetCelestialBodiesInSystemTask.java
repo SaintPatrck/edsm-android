@@ -19,6 +19,7 @@
 package com.phapps.elitedangerous.edsm.tasks;
 
 import android.net.Uri;
+import android.util.Log;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -30,6 +31,8 @@ import com.phapps.elitedangerous.edsm.network.GsonRequest;
 import com.phapps.elitedangerous.edsm.requests.GetCelestialBodiesInSystemRequest;
 
 public class GetCelestialBodiesInSystemTask extends EdsmTask {
+
+    private static final String TAG = GetCelestialBodiesInSystemTask.class.getName();
 
     private final GetCelestialBodiesInSystemRequest mRequest;
     private final GetCelestialBodiesInSystemCallbacks mCallbacks;
@@ -66,6 +69,7 @@ public class GetCelestialBodiesInSystemTask extends EdsmTask {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        Log.d(TAG, "onErrorResponse() called with: error = [" + error + "]");
                         mCallbacks.onError();
                     }
                 });

@@ -36,8 +36,8 @@ public class GetSystemsInAreaTask extends EdsmTask {
     private final GetSystemsInAreaRequest mRequest;
     private final GetSystemsInAreaCallbacks mCallbacks;
 
-    public GetSystemsInAreaTask(RequestQueue requestQueue, EdsmClient.Server server, GetSystemsInAreaRequest request,
-            GetSystemsInAreaCallbacks callbacks) {
+    public GetSystemsInAreaTask(RequestQueue requestQueue, EdsmClient.Server server,
+            GetSystemsInAreaRequest request, GetSystemsInAreaCallbacks callbacks) {
         super(requestQueue, server);
         mRequest = request;
         mCallbacks = callbacks;
@@ -74,21 +74,23 @@ public class GetSystemsInAreaTask extends EdsmTask {
 
         setExpanderParams(uriBuilder, mRequest);
 
-        GsonRequest<SystemDistanceDto[]> gsonRequest = new GsonRequest<>(uriBuilder.build().toString(),
-                SystemDistanceDto[].class,
-                getHeaders(),
-                new Response.Listener<SystemDistanceDto[]>() {
-                    @Override
-                    public void onResponse(SystemDistanceDto[] response) {
-                        mCallbacks.onSuccess(response);
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        mCallbacks.onError();
-                    }
-                });
+        GsonRequest<SystemDistanceDto[]> gsonRequest =
+                new GsonRequest<>(uriBuilder.build().toString(),
+                        SystemDistanceDto[].class,
+                        getHeaders(),
+                        new Response.Listener<SystemDistanceDto[]>() {
+                            @Override
+                            public void onResponse(SystemDistanceDto[] response) {
+                                mCallbacks.onSuccess(response);
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                mCallbacks.onError();
+                            }
+                        });
+
         mRequestQueue.add(gsonRequest);
 
         return null;

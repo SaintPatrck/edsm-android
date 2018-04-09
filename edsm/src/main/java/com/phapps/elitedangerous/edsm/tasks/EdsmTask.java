@@ -53,7 +53,8 @@ abstract class EdsmTask extends AsyncTask<Void, Void, Void> {
         } else {
             apiPath = "";
         }
-        return Uri.parse(mServer.address).buildUpon().appendPath("api" + apiPath + "-v" + version)
+        return Uri.parse(mServer.address).buildUpon()
+                .appendPath("api" + apiPath + "-v" + version)
                 .appendPath(command);
     }
 

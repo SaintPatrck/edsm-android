@@ -27,7 +27,7 @@ public class RingDto {
     @SerializedName("type")
     private String mType;
     @SerializedName("mass")
-    private Integer mMass;
+    private Long mMass;
     @SerializedName("innerRadius")
     private Integer mInnerRadius;
     @SerializedName("outerRadius")
@@ -41,7 +41,7 @@ public class RingDto {
         return mType;
     }
 
-    public Integer getMass() {
+    public Long getMass() {
         return mMass;
     }
 

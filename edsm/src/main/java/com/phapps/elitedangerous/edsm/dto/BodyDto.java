@@ -19,7 +19,9 @@
 package com.phapps.elitedangerous.edsm.dto;
 
 import com.google.gson.annotations.SerializedName;
-import com.phapps.elitedangerous.edsm.annotations.CelestialBodyType;
+import com.phapps.elitedangerous.edsm.constants.enums.BodyType;
+import com.phapps.elitedangerous.edsm.constants.enums.PlanetClass;
+import com.phapps.elitedangerous.edsm.constants.enums.TerraformState;
 
 import java.util.List;
 
@@ -29,10 +31,9 @@ public class BodyDto {
     @SerializedName("name")
     private String mName;
     @SerializedName("type")
-    @CelestialBodyType
-    private String mType;
+    private BodyType mType;
     @SerializedName("subType")
-    private String mSubType;
+    private PlanetClass mSubType;
     @SerializedName("distanceToArrival")
     private Double mDistanceToArrival;
     @SerializedName("isMainStar")
@@ -76,7 +77,7 @@ public class BodyDto {
     @SerializedName("atmosphereType")
     private String mAtmosphereType;
     @SerializedName("terraformingState")
-    private String mTerraformingState;
+    private TerraformState mTerraformingState;
     @SerializedName("rings")
     private List<RingDto> mRings;
 
@@ -88,12 +89,11 @@ public class BodyDto {
         return mName;
     }
 
-    @CelestialBodyType
-    public String getType() {
+    public BodyType getType() {
         return mType;
     }
 
-    public String getSubType() {
+    public PlanetClass getPlanetClass() {
         return mSubType;
     }
 
@@ -181,7 +181,7 @@ public class BodyDto {
         return mAtmosphereType;
     }
 
-    public String getTerraformingState() {
+    public TerraformState getTerraformState() {
         return mTerraformingState;
     }
 

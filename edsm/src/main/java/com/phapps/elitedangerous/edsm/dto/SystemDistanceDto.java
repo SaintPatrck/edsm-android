@@ -21,10 +21,22 @@ package com.phapps.elitedangerous.edsm.dto;
 import com.google.gson.annotations.SerializedName;
 
 public class SystemDistanceDto {
+    @SerializedName("id")
+    private Long mId;
     @SerializedName("distance")
     private double mDistance;
     @SerializedName("name")
     private String mName;
+    @SerializedName("coords")
+    private CoordinatesDto mCoordinates;
+    @SerializedName("coordsLocked")
+    private Boolean mCoordsLocked;
+    @SerializedName("requirePermit")
+    private Boolean mRequirePermit;
+
+    public Long getId() {
+        return mId;
+    }
 
     public double getDistance() {
         return mDistance;
@@ -34,11 +46,27 @@ public class SystemDistanceDto {
         return mName;
     }
 
+    public CoordinatesDto getCoordinates() {
+        return mCoordinates;
+    }
+
+    public Boolean getCoordsLocked() {
+        return mCoordsLocked;
+    }
+
+    public Boolean getRequirePermit() {
+        return mRequirePermit;
+    }
+
     @Override
     public String toString() {
         return "SystemDistanceDto{" +
-                "\nmDistance=" + mDistance + '\'' +
+                "\nmId=" + mId + '\'' +
+                ",\n mDistance=" + mDistance + '\'' +
                 ",\n mName='" + mName + '\'' +
+                ",\n mCoordinates=" + mCoordinates + '\'' +
+                ",\n mCoordsLocked=" + mCoordsLocked + '\'' +
+                ",\n mRequirePermit=" + mRequirePermit + '\'' +
                 '}';
     }
 }
