@@ -64,7 +64,7 @@ import static org.junit.Assert.fail;
 @RunWith(AndroidJUnit4.class)
 public class CommanderInstrumentedTest {
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         EdsmClient.init(InstrumentationRegistry.getTargetContext());
         // The test endpoint does not return the expected results so we use the production endpoint instead.
         EdsmClient.getInstance().setServer(EdsmClient.Server.Production);

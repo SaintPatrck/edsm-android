@@ -80,7 +80,7 @@ public final class AlwaysListTypeAdapterFactory<E> implements TypeAdapterFactory
         }
 
         @Override
-        public void write(JsonWriter out, List<F> value) throws IOException {
+        public void write(JsonWriter out, List<F> value) {
             throw new UnsupportedOperationException();
         }
 

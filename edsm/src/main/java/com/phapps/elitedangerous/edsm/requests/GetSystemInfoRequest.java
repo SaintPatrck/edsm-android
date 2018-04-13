@@ -18,12 +18,16 @@
 
 package com.phapps.elitedangerous.edsm.requests;
 
+import android.support.annotation.NonNull;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
 public class GetSystemInfoRequest extends BaseSystemRequest {
-    private List<String> mSystemNames;
+
+    private final List<String> mSystemNames = new ArrayList<>();
     private boolean mIncludeHidden;
     private boolean mOnlyFeatured;
     private boolean mOnlyKnownCoords;
@@ -31,21 +35,20 @@ public class GetSystemInfoRequest extends BaseSystemRequest {
     private Date mLastUpdatedStartDate;
     private Date mLastUpdatedEndDate;
 
+    @NonNull
     public List<String> getSystemNames() {
         return mSystemNames;
     }
 
-    private GetSystemInfoRequest setSystemName(String systemName) {
-        if (mSystemNames == null) {
-            mSystemNames = new ArrayList<>();
-        }
+    private GetSystemInfoRequest setSystemName(@NonNull String systemName) {
         mSystemNames.clear();
         mSystemNames.add(systemName);
         return this;
     }
 
-    public GetSystemInfoRequest setSystemNames(List<String> systemNames) {
-        mSystemNames = systemNames;
+    public GetSystemInfoRequest setSystemNames(@NonNull List<String> systemNames) {
+        mSystemNames.clear();
+        Collections.copy(mSystemNames, systemNames);
         return this;
     }
 
