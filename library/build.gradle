@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+
+apply from: 'bintray.properties.gradle'
+apply from: 'version.gradle'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+
+    /* Volley HTTP Client Library */
+    implementation 'com.android.volley:volley:1.0.0'
+
+    /* Google JSON Serialization Library */
+    implementation 'com.google.code.gson:gson:2.8.2'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}
+
+apply from: 'maven.install.gradle'
+apply from: 'bintray.deploy.gradle'
