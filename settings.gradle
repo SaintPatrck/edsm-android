@@ -1,1 +1,1 @@
-include ':app', ':edsm'
+include ':library'
