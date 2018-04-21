@@ -4,13 +4,10 @@ import com.google.gson.annotations.SerializedName;
 
 public enum BodyType {
 
-    @SerializedName("Null")
-    NULL,
-
-    @SerializedName("Star")
+    @SerializedName("STAR")
     STAR,
 
-    @SerializedName("Planet")
+    @SerializedName("PLANET")
     PLANET,
 
     @SerializedName("PlanetaryRing")

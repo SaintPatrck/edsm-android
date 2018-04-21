@@ -18,6 +18,8 @@
 
 package com.phapps.elitedangerous.edsm.dto;
 
+import android.support.annotation.Nullable;
+
 import com.google.gson.annotations.SerializedName;
 import com.phapps.elitedangerous.edsm.constants.enums.BodyType;
 import com.phapps.elitedangerous.edsm.constants.enums.PlanetClass;
@@ -28,56 +30,83 @@ import java.util.List;
 public class BodyDto {
     @SerializedName("id")
     private Long mId;
+
     @SerializedName("name")
     private String mName;
+
     @SerializedName("type")
     private BodyType mType;
+
+    @Nullable
     @SerializedName("subType")
     private PlanetClass mSubType;
+
     @SerializedName("distanceToArrival")
     private Double mDistanceToArrival;
+
     @SerializedName("isMainStar")
     private Boolean mMainStar;
+
     @SerializedName("isScoopable")
     private Boolean mScoopable;
+
     @SerializedName("age")
     private Integer mAge;
+
     @SerializedName("absoluteMagnitude")
     private Double mAbsoluteMagnitude;
+
     @SerializedName("solarMasses")
     private Double mSolarMasses;
+
     @SerializedName("solarRadius")
     private Double mSolarRadius;
+
     @SerializedName("surfaceTemperature")
     private Integer mSurfaceTemperature;
+
     @SerializedName("orbitalPeriod")
     private Double mOrbitalPeriod;
+
     @SerializedName("semiMajorAxis")
     private Double mSemiMajorAxis;
+
     @SerializedName("orbitalEccentricity")
     private Double mOrbitalEccentricity;
+
     @SerializedName("orbitalInclination")
     private Double mOrbitalInclination;
+
     @SerializedName("argOfPeriapsis")
     private Double mArgOfPeriapsis;
+
     @SerializedName("rotationalPeriod")
     private Double mRotationalPeriod;
+
     @SerializedName("rotationalPeriodTidallyLocked")
     private Boolean mRotationalPeriodTidallyLocked;
+
     @SerializedName("isLandable")
     private Boolean mLandable;
+
     @SerializedName("gravity")
     private Double mGravity;
+
     @SerializedName("earthMasses")
     private Double mEarthMasses;
+
     @SerializedName("radius")
     private Double mRadius;
+
     @SerializedName("volcanismType")
     private String mVolcanismType;
+
     @SerializedName("atmosphereType")
     private String mAtmosphereType;
+
     @SerializedName("terraformingState")
     private TerraformState mTerraformingState;
+
     @SerializedName("rings")
     private List<RingDto> mRings;
 
@@ -93,6 +122,7 @@ public class BodyDto {
         return mType;
     }
 
+    @Nullable
     public PlanetClass getPlanetClass() {
         return mSubType;
     }
