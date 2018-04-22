@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017. 
+ * Copyright (c) 2017.
  *
  * Copyright 2017 Patrick Honkonen
  *
@@ -21,7 +21,9 @@
  */
 apply plugin: 'com.github.dcendents.android-maven'
 
-group = groupId                               // Maven Group ID for the artifact
+apply from: 'bintray.properties.gradle'
+
+group = bintrayGroupId                               // Maven Group ID for the artifact
 
 install {
     repositories.mavenInstaller {
@@ -29,8 +31,8 @@ install {
         pom {
             project {
                 packaging 'aar'
-                groupId groupId
-                artifactId artifactId
+                groupId bintrayGroupId
+                artifactId bintrayArtifactId
 
                 // Add your description here
                 name libraryName

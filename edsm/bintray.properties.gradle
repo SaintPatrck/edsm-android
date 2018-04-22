@@ -29,8 +29,8 @@ ext {
     siteUrl = 'https://github.com/StPatrck/edsm-android'
     gitUrl = 'https://github.com/StPatrck/edsm-android.git'
 
-    groupId = 'com.github.stpatrck'
-    artifactid = 'edsm-android'
+    bintrayGroupId = 'com.github.stpatrck'
+    bintrayArtifactId = 'edsm'
 
     libraryName = 'EDSM-Android'
     libraryDescription = 'An Elite: Dangerous Star Map API client for Android.'
