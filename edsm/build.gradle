@@ -21,14 +21,13 @@ android {
             consumerProguardFiles 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
 
     /* Volley HTTP Client Library */
-    implementation 'com.android.volley:volley:1.0.0'
+    implementation 'com.android.volley:volley:1.1.0'
 
     /* Google JSON Serialization Library */
     implementation 'com.google.code.gson:gson:2.8.2'
