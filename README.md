@@ -1,5 +1,8 @@
 ****Elite: Dangerous Star Map Android Client****
 
+[![](https://jitpack.io/v/StPatrck/edsm-android.svg)](https://jitpack.io/#StPatrck/edsm-android)
+[![Build Status](https://travis-ci.org/StPatrck/edsm-android.svg?branch=master)](https://travis-ci.org/StPatrck/edsm-android)
+
 A client library for the Elite: Dangerous Star Map APIs.
 
 I've found several Mac, Windows, and iOS tools leveraging the EDSM APIs, but nothing geared 
@@ -13,11 +16,19 @@ You can check out the other Elite: Dangerous tools I've created for Android at
 
 **Installation**
 
-- Library is available through `jcenter`. For maven projects include the following in your build 
-script...
+- Library is available through `jcenter` and `jitpack.io`. 
+
+For gradle projects using `jcenter` repositories include the following in your build script:
 ```groovy
 dependencies {
     implementation 'com.github.stpatrck:edsm:+'
+}
+```
+
+For gradle projects using `jitpack.io` repositories include the following in your build script:
+```groovy
+dependencies {
+    implementation 'com.github.StPatrck:edsm-android:+'
 }
 ```
 
