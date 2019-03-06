@@ -20,7 +20,12 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
-# Default Proguard file
--keep class com.phapps.elitedangerous.edsm.EdsmClient
+-keepattributes Annotations, InnerClasses, Signature
+
+# GSON Serialized objects
+
+-keep class com.phapps.elitedangerous.edsm.constants.** { *; }
+-keepclassmembers class com.phapps.elitedangerous.edsm.dto.** { *; }
+
 
 -keep public class com.phapps.elitedangeroud.edsm.dto.**
